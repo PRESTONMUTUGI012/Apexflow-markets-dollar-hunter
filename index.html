@@ -3,394 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apexflow market dollar hunters</title>
-    <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --accent-color: #3b82f6;
-            --text-color: #f8fafc;
-            --text-secondary: #94a3b8;
-            --success: #22c55e;
-            --danger: #ef4444;
-            --tab-bg: #334155;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        header {
-            background-color: var(--card-bg);
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #334155;
-        }
-        h1 {
-            font-size: 1.05rem;
-            margin: 0;
-            color: var(--accent-color);
-            font-weight: 700;
-        }
-        .container {
-            padding: 1rem;
-            max-width: 600px;
-            margin: 0 auto;
-            width: 100%;
-            box-sizing: border-box;
-            flex: 1;
-        }
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 1.25rem;
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        .tabs {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        .tab-btn {
-            flex: 1;
-            background-color: var(--tab-bg);
-            color: var(--text-secondary);
-            border: none;
-            padding: 0.6rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            cursor: pointer;
-            text-align: center;
-        }
-        .tab-btn.active {
-            background-color: var(--accent-color);
-            color: white;
-        }
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        select, input {
-            width: 100%;
-            padding: 0.75rem;
-            border-radius: 8px;
-            border: 1px solid #475569;
-            background-color: #0f172a;
-            color: white;
-            font-size: 1rem;
-            margin-top: 0.5rem;
-            box-sizing: border-box;
-        }
-        button.action-btn {
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.25rem;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 0.75rem;
-        }
-        .auth-btn {
-            background-color: var(--success);
-            color: white;
-            border: none;
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            cursor: pointer;
-        }
-        .price-display {
-            font-size: 2.2rem;
-            font-weight: bold;
-            margin: 0.5rem 0;
-            color: #22c55e;
-        }
-        .status {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: var(--danger);
-            margin-right: 5px;
-        }
-        .status.connected {
-            background-color: var(--success);
-        }
-    </style>
+    <title>Apexflow Market Dollar Hunters 📉📊✅ | Ehaldart Global FX & Binary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="text-slate-100 font-sans min-h-screen flex flex-col poster-bg">
 
-    <header>
-        <h1>Apexflow market dollar hunters</h1>
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <div>
-                <span id="status-dot" class="status"></span>
-                <span id="status-text" style="font-size: 0.8rem; color: var(--text-secondary);">Connecting...</span>
+    <!-- Navigation Header with Poster Branding -->
+    <header class="border-b border-emerald-500/30 bg-slate-950/80 backdrop-blur sticky top-0 z-50 shadow-lg shadow-emerald-950/50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center gap-3">
+            <div class="flex items-center space-x-3 text-center md:text-left">
+                <!-- Brand Logo Image (Make sure your file is named logo.jpg or logo.png) -->
+                <img src="logo.jpg" alt="Ehaldart Global FX" class="w-12 h-12 rounded-lg object-cover border-2 border-emerald-400 shadow-md shadow-emerald-500/30">
+                <div>
+                    <div class="text-[10px] font-mono tracking-widest text-cyan-400 font-bold">EHALDART GLOBAL FX & BINARY</div>
+                    <h1 class="font-black text-sm md:text-base tracking-wide text-white">
+                        APEXFLOW <span class="text-emerald-400">MARKET DOLLAR HUNTERS</span>
+                    </h1>
+                    <p class="text-[11px] text-slate-300 font-mono tracking-wider">MULTIMARKET TERMINAL • BY JAMAL EHALDART</p>
+                </div>
             </div>
-            <button id="login-btn" class="auth-btn" onclick="loginDeriv()">Log In</button>
+            
+            <div class="flex items-center space-x-4">
+                <div id="connectionStatus" class="flex items-center space-x-2 bg-slate-900/90 px-3.5 py-1.5 rounded-full border border-emerald-500/40 text-xs shadow-inner">
+                    <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
+                    <span class="text-slate-200 font-mono">Connecting Public Feed...</span>
+                </div>
+            </div>
         </div>
     </header>
 
-    <div class="container">
-        <!-- Account Info Card -->
-        <div id="account-card" class="card" style="display: none;">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 0.85rem; color: var(--text-secondary);">Account Balance:</span>
-                <span id="user-balance" style="font-weight: bold; color: var(--success); font-size: 1.1rem;">$0.00</span>
-            </div>
-        </div>
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-7xl w-full mx-auto p-4 grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-        <!-- Market & Feed Card -->
-        <div class="card">
-            <label style="font-size: 0.85rem; color: var(--text-secondary);">Select Market Category:</label>
-            <select id="market-category" onchange="filterMarkets()">
-                <option value="all">All Available Deriv Markets</option>
-                <option value="synthetic_index">Synthetic Indices (Volatility, Boom/Crash, Jump)</option>
-                <option value="forex">Forex Pairs (Major, Minor, Exotic)</option>
-                <option value="cryptocurrency">Cryptocurrencies (BTC, ETH, LTC)</option>
-                <option value="commodities">Commodities (Gold, Silver, Metals, Oil)</option>
-                <option value="basket_index">Basket Indices</option>
-                <option value="indices">Stock & ETF Indices</option>
-            </select>
-
-            <label style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.75rem; display: block;">Select Asset / Symbol:</label>
-            <select id="symbol-select" onchange="changeSymbol()">
-                <option value="R_100">Volatility 100 Index</option>
-            </select>
+        <!-- Left & Center Panel: Selector & Visualizer -->
+        <div class="lg:col-span-2 space-y-6">
             
-            <div style="margin-top: 1rem;">
-                <span id="active-symbol-label" style="font-size: 0.85rem; color: var(--text-secondary);">Live Quote:</span>
-                <div id="price" class="price-display">--.----</div>
+            <!-- All Markets Selector Header -->
+            <div class="poster-card rounded-xl p-4 flex flex-wrap gap-4 justify-between items-center border border-emerald-500/30 shadow-lg">
+                <div class="flex-1 min-w-[240px]">
+                    <label class="block text-xs font-bold text-emerald-400 uppercase tracking-wider mb-1">Select Market & Instrument</label>
+                    <select id="marketSelect" class="w-full bg-slate-950 border border-emerald-500/40 rounded-lg px-3 py-2 text-sm text-emerald-300 font-semibold focus:outline-none focus:border-emerald-400">
+                        <option value="">Loading All Deriv Markets...</option>
+                    </select>
+                </div>
+                
+                <div class="flex items-center space-x-6 bg-slate-950/90 border border-emerald-500/30 px-4 py-2 rounded-lg">
+                    <div>
+                        <div class="text-[10px] text-cyan-400 uppercase font-bold">Active Quote</div>
+                        <div id="livePrice" class="text-lg font-mono font-extrabold text-emerald-400">0.0000</div>
+                    </div>
+                    <div>
+                        <div class="text-[10px] text-slate-400 uppercase font-semibold">Epoch Time</div>
+                        <div id="liveEpoch" class="text-xs font-mono text-slate-300">--</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SVG Live Tick Chart -->
+            <div class="poster-card rounded-xl p-5 relative overflow-hidden border border-emerald-500/30 shadow-xl">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-sm font-bold text-slate-200 flex items-center space-x-2">
+                        <i class="fa-solid fa-chart-line text-emerald-400"></i>
+                        <span>Public Real-Time Market Stream</span>
+                    </h2>
+                    <span id="chartSymbol" class="text-xs font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/40 px-2.5 py-0.5 rounded font-bold">
+                        R_100
+                    </span>
+                </div>
+                
+                <div class="w-full h-72 bg-slate-950/90 rounded-lg border border-emerald-500/20 p-2 relative shadow-inner">
+                    <svg id="tickChart" class="w-full h-full chart-glow" preserveAspectRatio="none">
+                        <path id="chartPath" d="" fill="none" stroke="#10b981" stroke-width="2.5" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Analysis Panel (Rise/Fall & Digits) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Rise / Fall Indicator Card -->
+                <div class="poster-card rounded-xl p-5 border border-emerald-500/30 shadow-lg">
+                    <h3 class="text-xs font-bold text-slate-200 uppercase tracking-wider mb-3 flex items-center space-x-2">
+                        <i class="fa-solid fa-arrow-trend-up text-emerald-400"></i>
+                        <span>Tick Direction (Rise / Fall)</span>
+                    </h3>
+                    <div id="tickDirectionBox" class="p-4 bg-slate-950/90 rounded-lg border border-emerald-500/30 text-center font-mono text-lg font-bold text-slate-400 shadow-inner">
+                        Waiting for tick comparison...
+                    </div>
+                </div>
+
+                <!-- Last Digit Analysis Card -->
+                <div class="poster-card rounded-xl p-5 border border-emerald-500/30 shadow-lg">
+                    <h3 class="text-xs font-bold text-slate-200 uppercase tracking-wider mb-3 flex items-center space-x-2">
+                        <i class="fa-solid fa-hashtag text-amber-400"></i>
+                        <span>Last Digit Analysis</span>
+                    </h3>
+                    <div class="p-4 bg-slate-950/90 rounded-lg border border-emerald-500/30 flex justify-between items-center font-mono shadow-inner">
+                        <div>
+                            <div class="text-[10px] text-slate-400 uppercase">Last Digit</div>
+                            <div id="lastDigitValue" class="text-2xl font-extrabold text-amber-400">-</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-[10px] text-slate-400 uppercase">Status</div>
+                            <div id="digitEvenOdd" class="text-xs text-slate-300 font-bold">--</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- AI Trading Bot Analysis Panel -->
+            <div class="poster-card rounded-xl p-5 border border-emerald-500/30 shadow-lg">
+                <h3 class="text-xs font-bold text-slate-200 uppercase tracking-wider mb-3 flex items-center space-x-2">
+                    <i class="fa-solid fa-robot text-emerald-400 animate-bounce"></i>
+                    <span>Apexflow AI Market Predictor Bot</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-950/90 p-4 rounded-lg border border-emerald-500/30 font-mono shadow-inner">
+                    <div>
+                        <div class="text-[10px] text-cyan-400 uppercase font-bold">AI Recommended Signal</div>
+                        <div id="aiBotSignal" class="text-sm font-bold text-amber-400">Analyzing live tick feed...</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-[10px] text-cyan-400 uppercase font-bold">Confidence Rating</div>
+                        <div id="aiBotConfidence" class="text-sm font-bold text-emerald-400">--</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Right Panel: Live Tick Feed Table -->
+        <div class="space-y-6">
+            <div class="poster-card rounded-xl p-5 border border-emerald-500/30 shadow-xl h-full">
+                <h2 class="text-sm font-bold text-slate-200 uppercase tracking-wider mb-4 flex items-center space-x-2">
+                    <i class="fa-solid fa-bolt text-amber-400"></i>
+                    <span>Recent Stream Ticks</span>
+                </h2>
+                <div class="overflow-x-auto max-h-[600px] overflow-y-auto">
+                    <table class="w-full text-left text-xs text-slate-300">
+                        <thead class="bg-slate-950 text-emerald-400 font-mono border-b border-emerald-500/30 sticky top-0">
+                            <tr>
+                                <th class="p-2.5">Epoch</th>
+                                <th class="p-2.5">Quote</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tickTableBody" class="divide-y divide-emerald-500/10 font-mono">
+                            <!-- Live ticks added dynamically -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
-        <!-- Contract Type Navigation -->
-        <div class="tabs">
-            <button class="tab-btn active" onclick="switchTab('risefall')">Rise / Fall</button>
-            <button class="tab-btn" onclick="switchTab('digits')">Digits</button>
-            <button class="tab-btn" onclick="switchTab('accumulators')">Accumulators</button>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-emerald-500/30 bg-slate-950 py-4 mt-8">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-400 font-mono">
+            © 2026 Ehaldart Global FX & Binary • Multimarket Trading Terminal by Jamal Ehaldart.
         </div>
+    </footer>
 
-        <!-- Panel 1: Rise / Fall -->
-        <div id="tab-risefall" class="tab-content active card">
-            <h3>Rise / Fall (Ups & Downs)</h3>
-            <label style="font-size: 0.85rem; color: var(--text-secondary);">Stake Amount (USD):</label>
-            <input type="number" id="rf-stake" value="10">
-            <button class="action-btn" onclick="executeTrade('CALL')">Buy Rise (CALL)</button>
-            <button class="action-btn" onclick="executeTrade('PUT')" style="background-color: var(--danger); margin-top: 8px;">Buy Fall (PUT)</button>
-        </div>
-
-        <!-- Panel 2: Digits -->
-        <div id="tab-digits" class="tab-content card">
-            <h3>Digit Trading</h3>
-            <label style="font-size: 0.85rem; color: var(--text-secondary);">Prediction Type:</label>
-            <select id="digit-type">
-                <option value="MATCHES">Matches</option>
-                <option value="DIFFERS">Differs</option>
-                <option value="OVER">Over</option>
-                <option value="UNDER">Under</option>
-            </select>
-
-            <label style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; display: block;">Target Digit (0-9):</label>
-            <select id="digit-target">
-                <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option>
-                <option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option>
-                <option value="8">8</option><option value="9">9</option>
-            </select>
-            <button class="action-btn" onclick="executeTrade('DIGIT')">Place Digit Trade</button>
-        </div>
-
-        <!-- Panel 3: Accumulators -->
-        <div id="tab-accumulators" class="tab-content card">
-            <h3>Accumulator Options</h3>
-            <label style="font-size: 0.85rem; color: var(--text-secondary);">Growth Rate per Trust:</label>
-            <select id="acc-rate">
-                <option value="1">1% Growth Rate</option>
-                <option value="2">2% Growth Rate</option>
-                <option value="3">3% Growth Rate</option>
-                <option value="4">4% Growth Rate</option>
-                <option value="5">5% Growth Rate</option>
-            </select>
-            <button class="action-btn" onclick="executeTrade('ACCUMULATOR')">Start Accumulator</button>
-        </div>
-    </div>
-
-    <script>
-        const appId = '34RcdHkJItRtYpPgolA8T'; 
-        let ws = null;
-        let allSymbolsData = [];
-        let currentSymbol = 'R_100';
-        let currentSubscriptionId = null;
-        let authToken = null;
-
-        function connectDeriv() {
-            const statusDot = document.getElementById('status-dot');
-            const statusText = document.getElementById('status-text');
-
-            statusText.innerText = 'Connecting...';
-            statusDot.classList.remove('connected');
-
-            // Updated to the current public WebSocket endpoint as requested
-            ws = new WebSocket(`wss://ws.derivws.com/websockets/v3?app_id=${appId}`);
-
-            ws.onopen = function() {
-                statusDot.classList.add('connected');
-                statusText.innerText = 'Connected Live';
-                statusText.style.color = '#22c55e';
-                
-                checkOAuthToken();
-                ws.send(JSON.stringify({ active_symbols: "brief", product_type: "basic" }));
-                subscribeTicks(currentSymbol);
-            };
-
-            ws.onmessage = function(event) {
-                const data = JSON.parse(event.data);
-
-                if (data.msg_type === 'authorize') {
-                    if (data.error) {
-                        alert('Authorization failed: ' + data.error.message);
-                    } else {
-                        document.getElementById('login-btn').innerText = 'Logged In';
-                        document.getElementById('account-card').style.display = 'block';
-                        document.getElementById('user-balance').innerText = `${data.authorize.currency} ${data.authorize.balance}`;
-                        ws.send(JSON.stringify({ balance: 1, subscribe: 1 }));
-                    }
-                }
-
-                if (data.msg_type === 'balance' && data.balance) {
-                    document.getElementById('user-balance').innerText = `${data.balance.currency} ${data.balance.balance}`;
-                }
-
-                if (data.msg_type === 'active_symbols' && data.active_symbols) {
-                    allSymbolsData = data.active_symbols;
-                    filterMarkets(); 
-                }
-
-                if (data.msg_type === 'tick' && data.tick) {
-                    if (data.tick.subscription) {
-                        currentSubscriptionId = data.tick.subscription.id;
-                    }
-                    const quote = Number(data.tick.quote);
-                    document.getElementById('price').innerText = isNaN(quote) ? '--.----' : quote.toFixed(2);
-                }
-            };
-
-            ws.onclose = function() {
-                statusDot.classList.remove('connected');
-                statusText.innerText = 'Disconnected';
-                setTimeout(connectDeriv, 3000);
-            };
-
-            ws.onerror = function(err) {
-                console.error("WebSocket Error:", err);
-            };
-        }
-
-        function subscribeTicks(symbol) {
-            if (ws && ws.readyState === WebSocket.OPEN) {
-                if (currentSubscriptionId) {
-                    ws.send(JSON.stringify({ forget: currentSubscriptionId }));
-                    currentSubscriptionId = null;
-                }
-                ws.send(JSON.stringify({ ticks: symbol, subscribe: 1 }));
-            }
-        }
-
-        function loginDeriv() {
-            // Updated to the current standard OAuth authorization endpoint
-            window.location.href = `https://oauth.deriv.com/oauth2/authorize?app_id=${appId}`;
-        }
-
-        function checkOAuthToken() {
-            const urlParams = new URLSearchParams(window.location.search);
-            authToken = urlParams.get('token1');
-            if (authToken) {
-                ws.send(JSON.stringify({ authorize: authToken }));
-            }
-        }
-
-        function executeTrade(tradeType) {
-            if (!authToken) {
-                alert('Please log in with your Deriv account first to execute trades.');
-                return;
-            }
-            alert(`Placing ${tradeType} trade request on ${currentSymbol}...`);
-        }
-
-        function filterMarkets() {
-            const category = document.getElementById('market-category').value;
-            const symbolSelect = document.getElementById('symbol-select');
-            symbolSelect.innerHTML = '';
-
-            let filtered = [];
-            if (category === 'all') {
-                filtered = allSymbolsData;
-            } else {
-                filtered = allSymbolsData.filter(s => s.market === category);
-            }
-
-            if (filtered.length > 0) {
-                filtered.forEach(s => {
-                    const opt = document.createElement('option');
-                    opt.value = s.symbol;
-                    opt.innerText = `${s.display_name} (${s.symbol})`;
-                    symbolSelect.appendChild(opt);
-                });
-                currentSymbol = filtered[0].symbol;
-            } else {
-                const opt = document.createElement('option');
-                opt.value = 'R_100';
-                opt.innerText = 'Volatility 100 Index';
-                symbolSelect.appendChild(opt);
-                currentSymbol = 'R_100';
-            }
-
-            changeSymbol();
-        }
-
-        function changeSymbol() {
-            const symbolSelect = document.getElementById('symbol-select');
-            currentSymbol = symbolSelect.value;
-            const selectedText = symbolSelect.options[symbolSelect.selectedIndex].text;
-            document.getElementById('active-symbol-label').innerText = `Live Quote (${selectedText}):`;
-            subscribeTicks(currentSymbol);
-        }
-
-        function switchTab(tabName) {
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-
-            if (tabName === 'risefall') {
-                document.querySelectorAll('.tab-btn')[0].classList.add('active');
-                document.getElementById('tab-risefall').classList.add('active');
-            } else if (tabName === 'digits') {
-                document.querySelectorAll('.tab-btn')[1].classList.add('active');
-                document.getElementById('tab-digits').classList.add('active');
-            } else if (tabName === 'accumulators') {
-                document.querySelectorAll('.tab-btn')[2].classList.add('active');
-                document.getElementById('tab-accumulators').classList.add('active');
-            }
-        }
-
-        // Clean initialization call without syntax errors
-        window.addEventListener('load', function() {
-            connectDeriv();
-        });
-    </script>
+    <!-- App JavaScript Engine -->
+    <script src="app.js"></script>
 </body>
 </html>
+
+        
+            
+
+        
+        
